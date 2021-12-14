@@ -1,0 +1,12 @@
+<div>
+    <form class="m-3">
+        <input class="p-2" type="text" placeholder="Inserisci città" name="city" [(ngModel)]="city">
+        <button class="m-2 btn btn-primary" type="submit" (click)='getCityWeather()'>Invia</button>
+    </form>
+</div>
+
+<div class="m-3" *ngIf="cityWeather">
+    <h3>{{ cityWeather.name }}, {{ cityWeather.country }}, {{ cityWeather.date | date: "d MMMM yyyy" }}</h3>
+    <h3>{{ cityWeather.temp }}, {{ cityWeather.description }}</h3>
+    <img src="{{ cityWeather.icon }}" alt="Condizioni meteo">
+</div>
